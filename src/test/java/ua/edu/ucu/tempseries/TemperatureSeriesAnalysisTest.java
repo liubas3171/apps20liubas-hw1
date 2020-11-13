@@ -536,19 +536,19 @@ public class TemperatureSeriesAnalysisTest {
         TempSummaryStatistics stat = obj.summaryStatistics();
 
         double expResMin = -12;
-        double actualResMin = stat.minTemp;
+        double actualResMin = stat.getMinTemp();
         assertEquals(expResMin, actualResMin, 0.00001);
 
         double expResMax = 15;
-        double actualResMax = stat.maxTemp;
+        double actualResMax = stat.getMaxTemp();
         assertEquals(expResMax, actualResMax, 0.00001);
 
         double expResAvg = 1.444444;
-        double actualResAvg = stat.avgTemp;
+        double actualResAvg = stat.getAvgTemp();
         assertEquals(expResAvg, actualResAvg, 0.00001);
 
         double expResDev = 7.455216088;
-        double actualResDev = stat.devTemp;
+        double actualResDev = stat.getDevTemp();
         assertEquals(expResDev, actualResDev, 0.00001);
     }
 
