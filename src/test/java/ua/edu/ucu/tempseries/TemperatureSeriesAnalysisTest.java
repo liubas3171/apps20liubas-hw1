@@ -9,6 +9,24 @@ import java.util.InputMismatchException;
 
 public class TemperatureSeriesAnalysisTest {
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testEmptyConstructorEmptyForever() {
+        TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
+        seriesAnalysis.average();
+    }
+
+    @Test
+    public void testEmptyConstructorElsAddedLater() {
+        TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis();
+
+        seriesAnalysis.addTemps(1, 3, -5, 8);
+
+        double expRes = -5;
+        double actualRes = seriesAnalysis.min();
+
+        assertEquals(expRes, actualRes, 0.00001);
+    }
+
     @Test
     public void testAverageWithOneElementArray() {
         // setup input data and expected result
@@ -23,7 +41,6 @@ public class TemperatureSeriesAnalysisTest {
         assertEquals(expResult, actualResult, 0.00001);
     }
 
-    //    @Ignore
     @Test(expected = IllegalArgumentException.class)
     public void testAverageWithEmptyArray() {
         double[] temperatureSeries = {};
@@ -33,7 +50,6 @@ public class TemperatureSeriesAnalysisTest {
         seriesAnalysis.average();
     }
 
-    //    @Ignore
     @Test
     public void testAverage() {
         double[] temperatureSeries = {3.0, -5.0, 1.0, 5.0};

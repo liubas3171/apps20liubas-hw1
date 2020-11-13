@@ -76,9 +76,6 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsLessThen(double tempValue) {
-        // TODO with this
-        //Double.compare()
-
         int sizeOfNewArray = 0;
         for (int i = 0; i < realCapacity; i++) {
             if (array[i] < tempValue) {
@@ -135,9 +132,7 @@ public class TemperatureSeriesAnalysis {
 
     private void doubleCapacityOfArray() {
         double[] res = new double[array.length * 2];
-        for (int i = 0; i < array.length; i++) {
-            res[i] = array[i];
-        }
+        System.arraycopy(array, 0, res, 0, array.length);
         array = res;
     }
 
@@ -148,13 +143,13 @@ public class TemperatureSeriesAnalysis {
         double localMaxVal = values[0];
         double localMinVal = values[0];
 
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] < absMin) {
+        for (double value : values) {
+            if (value < absMin) {
                 throw new InputMismatchException();
-            } else if (values[i] < localMinVal) {
-                localMinVal = values[i];
-            } else if (values[i] > localMaxVal) {
-                localMaxVal = values[i];
+            } else if (value < localMinVal) {
+                localMinVal = value;
+            } else if (value > localMaxVal) {
+                localMaxVal = value;
             }
         }
         if (localMaxVal > maxVal) {
@@ -164,11 +159,11 @@ public class TemperatureSeriesAnalysis {
             minVal = localMinVal;
         }
 
-        for (int i = 0; i < values.length; i++) {
+        for (double value : values) {
             if (realCapacity >= array.length) {
                 doubleCapacityOfArray();
             }
-            array[realCapacity] = values[i];
+            array[realCapacity] = value;
             realCapacity += 1;
         }
     }
