@@ -10,9 +10,9 @@ public final class TempSummaryStatistics {
 
     public TempSummaryStatistics(double avg, double dev,
                                  double min, double max) {
-        avgTemp = avg;
-        devTemp = dev;
-        minTemp = min;
-        maxTemp = max;
+        this.avgTemp = avg;
+        this.devTemp = dev;
+        this.minTemp = min;
+        this.maxTemp = max;
     }
 }
