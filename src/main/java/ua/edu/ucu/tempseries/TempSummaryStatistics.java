@@ -2,10 +2,10 @@ package ua.edu.ucu.tempseries;
 
 
 public final class TempSummaryStatistics {
-    public final double avgTemp;
-    public final double devTemp;
-    public final double minTemp;
-    public final double maxTemp;
+    final public double avgTemp;
+    final public  double devTemp;
+    final public double minTemp;
+    final public double maxTemp;
 
 
     public TempSummaryStatistics(double avg, double dev,
