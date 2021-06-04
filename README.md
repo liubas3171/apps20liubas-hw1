@@ -1,33 +1,4 @@
 # apps20liubas-hw1
-Дане завдання призначене для роботи з масивами, циклами та умовними конструкціями. А також для ознайомлення зі стандартним циклом розробки з використанням системи контролю версій GitHub та системи постійної сборки (Continuous Integration - CI). 
-Система постійної сборки (CI) призначена для аналізу якості вихідного коду, його компіляції, та запуску тестів. Код для сборки CI бере з репозиторію. Даний підхід є обов'язковий при командній роботі над проектом.
-
-Інструкція:
-Скачайте архів з шаблоном проекту TemperatureSeries та розархівуйте його 
-Додайте його в локальний Git репозиторій
-Перейдіть в командному рядку до директорії TemperatureSeries
-Виконайте команди:
-> git init 
-> git add *
-> git commit -m "TemperatureSeries initial commit"
-Створіть на своєму GitHub новий репозиторій з іменем за наступним шаблоном apps20<surname>-hw1 (наприкад apps20dobosevych-hw1)
-Знову перейдіть в директорію TemperatureSeries і виконайте наступну команду 
-> git remote add origin https://github.com/<user_name>/apps20<surname>-hw1.git (наприклад,
-git remote add origin https://github.com/dobosevych/apps20dobosevych-hw1.git
-)
-Виконайте команду 
-> git push -u origin master
-
-Після цього може відкрити проект в IDE і почати виконувати завдання
-
-Важливо: https://github.com/dobosevych/apps20dobosevych-hw1.git
-
-не змінюйте структуру шаблоного проекту та не видаляйте файли checkstyle.xml, pom.xml
-класи які необхідно редагувати під час виконання завдання:
-TemperatureSeries/src/main/java/ua/edu/ucu/tempseries/TemperatureSeriesAnalysis.java
-TemperatureSeries/src/main/java/ua/edu/ucu/tempseries/TempSummaryStatistics.java
-TemperatureSeries/src/test/java/ua/edu/ucu/tempseries/TemperatureSeriesAnalysisTest.java
-при коміті проекту в локальний репозиторій (та на GitHub) необхідно щоб виключно були закомічені: src/, checkstyle.xml, pom.xml. Директорію target/, яка буде створена під час компіляції комітити не треба.
 
 Завдання:
 Реалізувати наступні методи для класу TemperatureSeriesAnalysis по роботі з рядом значень температур. 
